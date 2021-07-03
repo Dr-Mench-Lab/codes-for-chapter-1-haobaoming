@@ -1,0 +1,24 @@
+####hist
+# histogram using rbase graphics
+par(mfrow=c(1,3))
+# main is the title,xlab is x-axis lable(ylab also availble)
+#breaks are how many bins-1 to use
+hist(hb,main="Modern Englishman",xlab="head breadth(mm)")
+hist(hb,breaks=15,main="histogram,15 breaks")
+hist(hb,breaks=8,freq=FALSE,main="histogram,density")
+#histogram using ggplot
+library(ggplot2)
+#first put hb vector into a data frame
+hb_df<-data.frame(hb)
+p<-ggplot(hb_df,aes(x=hb))
+p<-p+geom_dotplot(binwidth=5)
+p<-p+labs(title="Modern Englishman head breath")
+p<-p+xlab("head breadth(mm)")
+print(p)
+
+####Stem-and-leaf plot
+stem(hb)
+#scale=2 makes plot roughly twice as wide
+stem(hb,scale=2)
+#scale=5 makes plot roughly five times as wide
+stem(hb,scale=5)
