@@ -25,14 +25,6 @@ median(y2)
 fivenum(y2)
 diff(fivenum(y2)[c(2,4)])
 
-####remove largest
-#remove the largest observation by removing the last of the sorted values
-y2<-sort(y)[-length(y)]
-y2
-median(y2)
-fivenum(y2)
-diff(fivenum(y2)[c(2,4)])
-
 #Englishmen
 hb<-c(141,148,132,138,154,142,150,146,155
 ,158,150,140,147,148,144,150,149,145)
